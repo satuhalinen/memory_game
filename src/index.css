@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Anonymous+Pro:ital,wght@0,400;1,700&family=Fuggles&family=Inter:wght@200&family=Josefin+Slab:wght@100&family=Kalnia:wght@100&family=Lato:ital,wght@0,400;1,300;1,900&family=Montserrat:ital,wght@1,200&family=Roboto+Mono:ital,wght@0,100;1,100;1,200&family=Roboto:wght@500&family=Silkscreen&family=Teko:wght@300&family=Zeyada&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Teko", sans-serif;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background-color: peachpuff;
+  color: black;
+  border-radius: 5px;
+  min-height: 100px;
+}
