@@ -4,9 +4,7 @@ import { useState } from "react";
 const CardList = () => {
   const [activeCardId, setActiveCardId] = useState(null);
   const visibilityHandler = (id) => {
-    if (activeCardId === id) {
-      setActiveCardId(null);
-    } else {
+    if (activeCardId !== id) {
       setActiveCardId(id);
     }
   };
