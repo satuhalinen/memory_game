@@ -1,8 +1,24 @@
 import Card from "./Card";
 import { cards } from "./cards";
 import { useState } from "react";
+import { useEffect } from "react";
+
 const CardList = () => {
   const [activeCardId, setActiveCardId] = useState([]);
+
+  function comparison() {
+    if (activeCardId.length === 2) {
+      let firstCard = cards.find((card) => card.id === activeCardId[0]);
+      let secondCard = cards.find((card) => card.id === activeCardId[1]);
+      if (firstCard.title !== secondCard.title) {
+        setTimeout(() => {
+          setActiveCardId([]);
+        }, "4000");
+      }
+    }
+  }
+
+  useEffect(comparison, [activeCardId]);
 
   const visibilityHandler = (id) => {
     if (activeCardId.length < 2) {
@@ -11,7 +27,7 @@ const CardList = () => {
       }
     }
   };
-  console.log(activeCardId);
+
   return (
     <div className="card-grid">
       {cards.map(function (data) {
