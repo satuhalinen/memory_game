@@ -2,12 +2,16 @@ import Card from "./Card";
 import { cards } from "./cards";
 import { useState } from "react";
 const CardList = () => {
-  const [activeCardId, setActiveCardId] = useState(null);
+  const [activeCardId, setActiveCardId] = useState([]);
+
   const visibilityHandler = (id) => {
-    if (activeCardId !== id) {
-      setActiveCardId(id);
+    if (activeCardId.length < 2) {
+      if (!activeCardId.includes(id)) {
+        setActiveCardId([...activeCardId, id]);
+      }
     }
   };
+  console.log(activeCardId);
   return (
     <div className="card-grid">
       {cards.map(function (data) {
@@ -15,7 +19,7 @@ const CardList = () => {
           <div>
             <Card
               visibilityHandler={() => visibilityHandler(data.id)}
-              showDescription={activeCardId === data.id ? true : false}
+              showDescription={activeCardId.includes(data.id) ? true : false}
               key={data.id}
               title={data.title}
               img={data.img}
