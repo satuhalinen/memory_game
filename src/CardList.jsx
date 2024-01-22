@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 const CardList = () => {
   const [activeCardId, setActiveCardId] = useState([]);
+  const [matchedCards, setMatchedCards] = useState([]);
 
   function comparison() {
     if (activeCardId.length === 2) {
@@ -14,6 +15,9 @@ const CardList = () => {
         setTimeout(() => {
           setActiveCardId([]);
         }, "4000");
+      } else {
+        setMatchedCards([...matchedCards, activeCardId[0], activeCardId[1]]);
+        setActiveCardId([]);
       }
     }
   }
@@ -35,7 +39,9 @@ const CardList = () => {
           <div>
             <Card
               visibilityHandler={() => visibilityHandler(data.id)}
-              showDescription={activeCardId.includes(data.id) ? true : false}
+              showDescription={
+                activeCardId.includes(data.id) || matchedCards.includes(data.id)
+              }
               key={data.id}
               title={data.title}
               img={data.img}
