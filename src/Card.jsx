@@ -1,6 +1,9 @@
-const Card = ({ title, img, visibilityHandler, showDescription }) => {
+const Card = ({ title, img, visibilityHandler, showDescription, shaking }) => {
   return (
-    <div className="card" onClick={visibilityHandler}>
+    <div
+      className={shaking ? "card animation" : "card"}
+      onClick={visibilityHandler}
+    >
       {showDescription === true ? (
         <>
           <h2>{title}</h2>

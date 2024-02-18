@@ -2,6 +2,7 @@ import Card from "./Card";
 import { cards } from "./cards";
 import { useState } from "react";
 import { useEffect } from "react";
+import "./index.css";
 
 const CardList = () => {
   const [activeCardId, setActiveCardId] = useState([]);
@@ -38,6 +39,14 @@ const CardList = () => {
         return (
           <div>
             <Card
+              shaking={
+                (!matchedCards.includes(data.id) &&
+                  !activeCardId.includes(data.id)) ||
+                matchedCards.includes(data.id) ||
+                activeCardId.length < 2
+                  ? false
+                  : true
+              }
               visibilityHandler={() => visibilityHandler(data.id)}
               showDescription={
                 activeCardId.includes(data.id) || matchedCards.includes(data.id)

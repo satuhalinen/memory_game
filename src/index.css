@@ -26,3 +26,23 @@ body {
 h2 {
   margin: 0;
 }
+
+.animation {
+  position: relative;
+  animation: le 900ms infinite alternate;
+}
+
+@keyframes le {
+  0% {
+    top: 0px;
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    top: 10px;
+  }
+}
