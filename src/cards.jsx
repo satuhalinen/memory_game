@@ -79,4 +79,4 @@ export const cards = [
     title: "dog",
     img: "https://source.unsplash.com/100x100/?dog",
   },
-];
+].sort(() => Math.random() - 0.5);

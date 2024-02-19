@@ -2,7 +2,6 @@ import Card from "./Card";
 import { cards } from "./cards";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./index.css";
 
 const CardList = () => {
   const [activeCardId, setActiveCardId] = useState([]);
