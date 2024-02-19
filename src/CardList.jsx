@@ -3,7 +3,7 @@ import { cards } from "./cards";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const CardList = () => {
+const CardList = ({ cardPairsFlipped, setCardPairsFlipped }) => {
   const [activeCardId, setActiveCardId] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
 
@@ -19,7 +19,13 @@ const CardList = () => {
         setMatchedCards([...matchedCards, activeCardId[0], activeCardId[1]]);
         setActiveCardId([]);
       }
+      calculateCardPairsFlipped();
     }
+  }
+
+  function calculateCardPairsFlipped() {
+    setCardPairsFlipped(cardPairsFlipped + 1);
+    console.log(cardPairsFlipped);
   }
 
   useEffect(comparison, [activeCardId]);
