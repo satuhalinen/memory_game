@@ -7,7 +7,7 @@ const Card = ({ title, img, visibilityHandler, visible, shaking }) => {
       {visible === true ? (
         <>
           <h2>{title}</h2>
-          <img alt={title} src={img}></img>
+          <img className="image" alt={title} src={img}></img>
         </>
       ) : null}
     </div>

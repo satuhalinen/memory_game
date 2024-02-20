@@ -16,7 +16,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url(background.jpg);
+  background-image: url("./images/background.jpg");
   background-size: cover;
 }
 
@@ -43,13 +43,17 @@ h2 {
   margin: 0;
 }
 
+.text {
+  margin-top: 5vh;
+}
+
+.image {
+  width: 50%;
+}
+
 .animation {
   position: relative;
   animation: le 900ms infinite alternate;
-}
-
-.text {
-  margin-top: 5vh;
 }
 
 @keyframes le {
