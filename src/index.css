@@ -24,7 +24,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 2px;
+  gap: 10px;
   justify-items: center;
   margin-bottom: 20vh;
 }
@@ -48,15 +48,15 @@ h2 {
 }
 
 .image {
-  width: 50%;
+  width: 70%;
 }
 
 .animation {
   position: relative;
-  animation: le 900ms infinite alternate;
+  animation: shake 900ms infinite alternate;
 }
 
-@keyframes le {
+@keyframes shake {
   0% {
     top: 0px;
   }

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This memory game includes eight pairs of cards with pet pictures. When a matching pair is flipped, the pair stays revealed. When there's no mathch, the pair shakes and becomes hidden. See how few card flips it takes you to reveal all the pairs! Try to beat the record 12 pairs!
+This memory game includes eight pairs of cards with pet pictures. When a matching pair is flipped, the pair stays revealed. When there's no match, the pair shakes and becomes hidden. See how few card flips it takes you to reveal all the pairs! Try to beat my record of 12 pairs!
 
 ## Technologies used
 
