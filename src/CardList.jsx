@@ -37,6 +37,15 @@ const CardList = ({ cardPairsFlipped, setCardPairsFlipped }) => {
     }
   };
 
+  function preloadImages() {
+    cards.forEach((card) => {
+      const image = new Image();
+      image.src = card.img;
+    });
+  }
+
+  useEffect(preloadImages, []);
+
   return (
     <div className="card-grid">
       {cards.map(function (data) {
