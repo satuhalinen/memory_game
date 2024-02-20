@@ -1,7 +1,6 @@
 import Card from "./Card";
 import { cards } from "./cards";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const CardList = ({ cardPairsFlipped, setCardPairsFlipped }) => {
   const [activeCardId, setActiveCardId] = useState([]);
@@ -19,13 +18,13 @@ const CardList = ({ cardPairsFlipped, setCardPairsFlipped }) => {
         setMatchedCards([...matchedCards, activeCardId[0], activeCardId[1]]);
         setActiveCardId([]);
       }
+
       calculateCardPairsFlipped();
     }
   }
 
   function calculateCardPairsFlipped() {
     setCardPairsFlipped(cardPairsFlipped + 1);
-    console.log(cardPairsFlipped);
   }
 
   useEffect(comparison, [activeCardId]);
@@ -42,25 +41,16 @@ const CardList = ({ cardPairsFlipped, setCardPairsFlipped }) => {
     <div className="card-grid">
       {cards.map(function (data) {
         return (
-          <div>
-            <Card
-              shaking={
-                (!matchedCards.includes(data.id) &&
-                  !activeCardId.includes(data.id)) ||
-                matchedCards.includes(data.id) ||
-                activeCardId.length < 2
-                  ? false
-                  : true
-              }
-              visibilityHandler={() => visibilityHandler(data.id)}
-              showDescription={
-                activeCardId.includes(data.id) || matchedCards.includes(data.id)
-              }
-              key={data.id}
-              title={data.title}
-              img={data.img}
-            ></Card>
-          </div>
+          <Card
+            shaking={activeCardId.length > 1 && activeCardId.includes(data.id)}
+            visibilityHandler={() => visibilityHandler(data.id)}
+            visible={
+              activeCardId.includes(data.id) || matchedCards.includes(data.id)
+            }
+            key={data.id}
+            title={data.title}
+            img={data.img}
+          ></Card>
         );
       })}
     </div>

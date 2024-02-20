@@ -1,13 +1,13 @@
-const Card = ({ title, img, visibilityHandler, showDescription, shaking }) => {
+const Card = ({ title, img, visibilityHandler, visible, shaking }) => {
   return (
     <div
       className={shaking ? "card animation" : "card"}
       onClick={visibilityHandler}
     >
-      {showDescription === true ? (
+      {visible === true ? (
         <>
           <h2>{title}</h2>
-          <img src={img}></img>
+          <img alt={title} src={img}></img>
         </>
       ) : null}
     </div>
