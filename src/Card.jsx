@@ -4,7 +4,7 @@ const Card = ({ title, img, visibilityHandler, visible, shaking }) => {
       className={shaking ? "card animation" : "card"}
       onClick={visibilityHandler}
     >
-      {visible === true ? (
+      {visible ? (
         <>
           <h2>{title}</h2>
           <img className="image" alt={title} src={img}></img>
